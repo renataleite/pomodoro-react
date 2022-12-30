@@ -5,7 +5,7 @@ import {
   StartCountdownButton,
   StopCountdownButton,
 } from "./styles";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { NewCycleForm } from "./Components/NewCycleForm/Index";
 import { Countdown } from "./Components/Countdown/Index";
 import { FormProvider, useForm } from "react-hook-form";
@@ -36,12 +36,17 @@ export function Home() {
   });
   const { handleSubmit, watch, reset } = newCycleForm;
 
+  function handleCreateNewCycle(data: NewCycleFormData) {
+    createNewCycle(data);
+    reset();
+  }
+
   const task = watch("task");
   const isSubmitDisabled = !task;
 
   return (
     <HomeContainer>
-      <form onSubmit={handleSubmit(createNewCycle)} action="">
+      <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
         <FormProvider {...newCycleForm}>
           <NewCycleForm />
         </FormProvider>
