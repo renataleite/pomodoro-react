@@ -22,6 +22,7 @@ interface CyclesContextType {
   setSecondsPassed: (seconds: number) => void;
   createNewCycle: (data: CreateCycleData) => void;
   interruptCurrentCycle: () => void;
+  cycles: Cycle[];
 }
 
 interface CyclesContextProviderProps {
@@ -96,6 +97,7 @@ export function CyclesContextProvider({
         setSecondsPassed,
         createNewCycle,
         interruptCurrentCycle,
+        cycles,
       }}
     >
       {children}
