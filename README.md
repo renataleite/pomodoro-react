@@ -37,7 +37,7 @@ Pomodoro React é uma aplicação web desenvolvida para ajudar na gestão de tem
 
 1. Clone o repositório.
    ```bash
-   git clone https://github.com/seu-usuario/pomodoro-react.git
+   git clone https://github.com/renataleite/pomodoro-react.git
    cd pomodoro-react
    ```
 
